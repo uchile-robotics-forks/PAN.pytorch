@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>PAN</name>
+  <name>pixel_aggregation_network</name>
   <version>0.0.0</version>
   <description>The Pixel Agregate Network package forked form </description>
 
