@@ -26,12 +26,12 @@ segmentation_head_dict = {'FPN': FPN, 'FPEM_FFM': FPEM_FFM}
 
 
 class Model(nn.Module):
-    def __init__(self, model_config: dict):
+    def __init__(self, model_config):
         """
         PANnet
         :param model_config: 模型配置
         """
-        super().__init__()
+        super(Model,self).__init__()
         backbone = model_config['backbone']
         pretrained = model_config['pretrained']
         segmentation_head = model_config['segmentation_head']

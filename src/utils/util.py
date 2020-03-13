@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def setup_logger(log_file_path: str = None):
+def setup_logger(log_file_path = None):
     import logging
     from colorlog import ColoredFormatter
     logging.basicConfig(filename=log_file_path,
@@ -60,7 +60,7 @@ def load_json(json_path):
     return data
 
 
-def show_img(imgs: np.ndarray, color=False):
+def show_img(imgs, color=False):
     if (len(imgs.shape) == 3 and color) or (len(imgs.shape) == 2 and not color):
         imgs = np.expand_dims(imgs, axis=0)
     for img in imgs:

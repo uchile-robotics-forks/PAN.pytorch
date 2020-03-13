@@ -69,7 +69,7 @@ class Pytorch_model:
         self.net.to(self.device)
         self.net.eval()
 
-    def predict(self, img: str, short_size: int = 736):
+    def predict(self, img, short_size = 736):
         '''
         对传入的图像进行预测，支持图像地址,opecv 读取图片，偏慢
         :param img: 图像地址
@@ -109,10 +109,9 @@ if __name__ == '__main__':
 
     os.environ['CUDA_VISIBLE_DEVICES'] = str('0')
 
-    model_path = 'output/PAN_shufflenetv2_FPEM_FFM.pth'
+    model_path = '/home/nmarticorena/uchile_ws/ros/maqui/forks_ws/src/PAN.pytorch/src/PAN_resnet18_FPEM_FFM.pth'
 
-    img_id = 10
-    img_path = 'E:/zj/dataset/icdar2015/test/img/img_{}.jpg'.format(img_id)
+    img_path = '/home/nmarticorena/uchile_ws/ros/maqui/forks_ws/src/PAN.pytorch/src/image_2.png'
 
     # 初始化网络
     model = Pytorch_model(model_path, gpu_id=0)

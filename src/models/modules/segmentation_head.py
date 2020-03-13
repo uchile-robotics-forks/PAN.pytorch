@@ -12,7 +12,7 @@ class FPN(nn.Module):
         :param backbone_out_channels: 基础网络输出的维度
         :param kwargs:
         """
-        super().__init__()
+        super(FPN,self).__init__()
         result_num = kwargs.get('result_num', 6)
         inplace = True
         conv_out = 256
@@ -95,7 +95,7 @@ class FPEM_FFM(nn.Module):
         PANnet
         :param backbone_out_channels: 基础网络输出的维度
         """
-        super().__init__()
+        super(FPEM_FFM,self).__init__()
         fpem_repeat = kwargs.get('fpem_repeat', 2)
         conv_out = 128
         # reduce layers
@@ -157,7 +157,7 @@ class FPEM_FFM(nn.Module):
 
 class FPEM(nn.Module):
     def __init__(self, in_channels=128):
-        super().__init__()
+        super(FPEM,self).__init__()
         self.up_add1 = SeparableConv2d(in_channels, in_channels, 1)
         self.up_add2 = SeparableConv2d(in_channels, in_channels, 1)
         self.up_add3 = SeparableConv2d(in_channels, in_channels, 1)
